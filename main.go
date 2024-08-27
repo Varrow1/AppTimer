@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"log"
 	"os/exec"
-	"strings"
 	"time"
 )
 
@@ -19,33 +18,40 @@ func main() {
 	fmt.Println("Input the app you want to spend time on")
 	fmt.Scanln(&appName)
 
+	pid, err := launchApp(appName)
+	if err != nil {
+		log.Fatalf("Failed to launch %s: %v\n", appName, err)
+	}
+
 	// Start the countdown
 	for i := countdown; i > 0; i-- {
-		fmt.Printf("Time remaining: %d seconds\n", i)
+		fmt.Printf("Time remaining: %d minutes\n", i)
 		time.Sleep(1 * time.Minute) // Wait for 1 Minute
 	}
 
 	fmt.Println("Time's up! Killing", appName)
-	killApp(appName)
+	killAppByPID(pid)
 }
 
-func killApp(appName string) {
-	// Find the process ID (PID) of the application
-	cmd := exec.Command("pgrep", appName)
-	output, err := cmd.Output()
+func launchApp(appName string) (int, error) {
+	cmd := exec.Command(appName)
+	err := cmd.Start()
 	if err != nil {
-		log.Fatalf("Failed to find %s process: %v\n", appName, err)
+		return 0, fmt.Errorf("failed to start the application: %w", err)
 	}
 
-	// Convert the output to a string and remove any extra whitespace
-	pid := strings.TrimSpace(string(output))
+	pid := cmd.Process.Pid
+	fmt.Printf("%s launched with PID %d\n", appName, pid)
+	return pid, nil
+}
 
-	// Kill the process by PID
-	cmd = exec.Command("kill", pid)
-	err = cmd.Run()
+func killAppByPID(pid int) error {
+	cmd := exec.Command("kill", fmt.Sprintf("%d", pid))
+	err := cmd.Run()
 	if err != nil {
-		log.Fatalf("Failed to kill %s process: %v\n", appName, err)
+		return fmt.Errorf("failed to kill process with PID %d: %w", pid, err)
 	}
 
-	fmt.Printf("%s has been killed.\n", appName)
+	fmt.Printf("Process with PID %d has been killed.\n", pid)
+	return nil
 }
