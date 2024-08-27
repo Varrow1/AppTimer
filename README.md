@@ -1,7 +1,3 @@
-Certainly! Here's an updated version of the README that highlights the usefulness of AppTimer for managing screen time, curbing addiction, and enhancing focus during work:
-
----
-
 # AppTimer - A Productivity CLI Application
 
 **AppTimer** is a lightweight command-line tool designed to help you manage your time effectively by controlling how long you use specific applications. Whether you're aiming to limit distractions, reduce screen time, or enhance your focus, AppTimer offers a simple yet powerful solution.
@@ -84,6 +80,3 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
----
-
-This version emphasizes the practical benefits of AppTimer for improving focus and managing screen time, making it clear how the tool can be used to address common productivity challenges.
