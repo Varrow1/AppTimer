@@ -25,7 +25,7 @@ In today's digital age, it's easy to lose track of time while using various appl
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/apptimer.git
+   git clone https://github.com/varrow1/apptimer.git
    ```
 
 2. **Navigate to the project directory:**
