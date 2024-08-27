@@ -54,7 +54,16 @@ In today's digital age, it's easy to lose track of time while using various appl
    ./apptimer
    ```
 
-2. **Input the application you want to launch:**
+
+2. **Set the duration:**
+   
+   You will then be asked how long you want the application to run. Enter the time in minutes. For example, to run the application for 30 minutes, type:
+
+   ```
+   30
+   ```
+
+3. **Input the application you want to launch:**
    
    You will be prompted to enter the name or path of the application you want to launch. For example, to open Netflix, type:
 
@@ -62,13 +71,6 @@ In today's digital age, it's easy to lose track of time while using various appl
    netflix
    ```
 
-3. **Set the duration:**
-   
-   You will then be asked how long you want the application to run. Enter the time in minutes. For example, to run the application for 30 minutes, type:
-
-   ```
-   30
-   ```
 
 4. **Stay in control:**
    
