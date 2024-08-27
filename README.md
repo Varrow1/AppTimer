@@ -68,7 +68,7 @@ In today's digital age, it's easy to lose track of time while using various appl
    You will be prompted to enter the name or path of the application you want to launch. For example, to open Netflix, type:
 
    ```
-   netflix
+   code
    ```
 
 
