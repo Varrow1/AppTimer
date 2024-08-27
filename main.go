@@ -22,7 +22,7 @@ func main() {
 	// Start the countdown
 	for i := countdown; i > 0; i-- {
 		fmt.Printf("Time remaining: %d seconds\n", i)
-		time.Sleep(1 * time.Second) // Wait for 1 second
+		time.Sleep(1 * time.Minute) // Wait for 1 Minute
 	}
 
 	fmt.Println("Time's up! Killing", appName)
